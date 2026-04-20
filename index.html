@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ My To-Do List ✨</h1>
+            <div class="header-controls">
+                <div class="stats">
+                    <span id="taskCount">0 tasks remaining</span>
+                </div>
+                <button id="themeToggle" class="icon-btn">🌙</button>
+            </div>
+        </header>
+
+        <section class="add-task-section">
+            <h2>Add New Task</h2>
+            <div class="task-input-group">
+                <input type="text" id="taskInput" placeholder="What needs to be done?">
+            </div>
+            <div class="task-details-group">
+                <div class="input-row">
+                    <div class="input-field">
+                        <label for="categorySelect">Category</label>
+                        <select id="categorySelect">
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <label for="prioritySelect">Priority</label>
+                        <select id="prioritySelect">
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <label for="dueDateInput">Due Date</label>
+                        <input type="date" id="dueDateInput">
+                    </div>
+                </div>
+                <button id="addTaskBtn" class="primary-btn">Add Task</button>
+            </div>
+        </section>
+
+        <section class="task-management">
+            <div class="search-filter-row">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search tasks...">
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                    <button class="filter-btn" data-filter="today">Due Today</button>
+                </div>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-info">
+                    <span class="progress-label">Progress</span>
+                    <span class="progress-text" id="progressText">0% Complete</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+
+            <div class="bulk-actions">
+                <button id="clearCompletedBtn" class="secondary-btn">Clear Completed</button>
+            </div>
+        </section>
+
+        <section class="task-list-section">
+            <ul id="taskList"></ul>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
